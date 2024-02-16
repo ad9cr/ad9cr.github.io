@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  {{ range .Pages }}
+    <article>
+      <header>
+        <h3 class="blog-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+        <date class="blog-post-meta">{{ $dateHuman := .Date | time.Format ":date_long" }}</date>
+      </header>
+      <summary>
+      {{ .Summary }}
+      </summary>
+    </article>
+  {{ end }}
+{{ end }}

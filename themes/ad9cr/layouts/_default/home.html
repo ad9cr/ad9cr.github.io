@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ .Content }}
+  <h2>Recent Content</h2>
+    <ul>
+  {{ range first 5 (sort site.RegularPages "Date" "desc") }}
+  <li>
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  </li>
+  {{ end }}
+    </ul>
+{{ end }}
