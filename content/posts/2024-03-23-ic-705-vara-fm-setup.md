@@ -17,6 +17,28 @@ this and other radios again in the future, and (3) some future reader may be abl
 
 ## Radio Setup
 
+The Icom IC-705 has a pretty cool feature that allows you to save and load "presets", which are combinations of settings that you may use for different purposes. The radio ships with a pre-configured preset called "FT8" that I decided to start out with because it has a lot of sane defaults for digital modes. With that preset loaded, let's talk about some other settings that were important to getting this setup. Unfortunately I set up the radio side before I decided that I would do this documentation exercise, so there may be some items missed.
+
+- Menu -> Set -> Connectors 
+  - USB(B) Function
+    - USB (B) Function = OFF
+    - GPS Out = ON
+    - *The above options set your radio up to feed a GPS data stream to the secondary COM port*
+  - USB AF/IF Output
+    - Output Select = AF
+    - AF SQL = OFF (Open)
+    - AF Output Level = 50%
+    - *The above options set up audio output through USB to your computer, sets a "middle of the road" output level (you may need to tweak this), and turns off squelch so that all received signal will be passed to your computer for processing*
+  - CI-V
+    - CI-V Address = A4h *(this is the default and just for awareness)*
+    - CI-V Transceive = ON
+    - CI-V Echo Back = OFF
+- Menu -> GPS
+  - GPS TX Mode = NMEA
+  - *This sets the data format of the GPS data stream sent to the COM port to NMEA, which is most commonly used by software*
+- Mode = FM Digital
+- Filter = Filter 1
+    
 ## PC Setup
 
 ### Windows Settings
